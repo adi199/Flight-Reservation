@@ -1,0 +1,16 @@
+<% include header.ejs %>
+<div class="card-deck">
+  <% data.forEach(function(user){ %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title text-dark"><%= user.cname %></h5>
+      <p class="card-text text-dark">To :- <%= user.hname %><br>
+        Contact no :- <%= user.no %><br>
+        Description :- <%= user.desc %><br>
+        Amount :- <%= user.amount%></p>
+    </div>
+  </div>
+  <% }); %>
+</div>
+</body>
+</html>

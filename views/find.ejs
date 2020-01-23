@@ -1,0 +1,27 @@
+<% include header.ejs %>
+
+<% data.forEach(function(user){ %>
+<div class="card">
+  <div class="card-header text-dark">
+    <%= user.hname %>
+  </div>
+  <div class="card-body text-dark">
+    <h5 class="card-title text-dark"><%= user.address %></h5>
+    <p class="card-text text-dark">Room no :- <%= user.room %><br>
+                         Type :- <%= user.type %><br>
+                         Check-in :- <%= checkin %><br>
+                         Check-out :- <%= checkout %><br>
+                         <b>Price :- <% user.price %></b></p>
+    <form action="/booked" method="post">
+      <input type="hidden" name="hname" value="<%= user.hname %>">
+      <input type="hidden" name="city" value="<%= user.city %>">
+      <input type="hidden" name="room" value="<%= user.room %>">
+      <input type="hidden" name="price" value="<%= user.price %>">
+      <input type="hidden" name="type" value="<%= user.type %>">
+      <button class="btn btn-outline-light my-2 my-sm-0 btn-primary" type="submit" value="Log In">Book now</button>
+    </form>
+  </div>
+</div>
+<% }); %>
+</body>
+</html>
